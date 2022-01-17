@@ -46,16 +46,6 @@ public class MovieListController {
         return ResponseEntity.status(HttpStatus.OK).body("The Movie with ID" + id + "has been deleted.");
     }
 
-    @GetMapping("movielist/carosel_images")
-    public ResponseEntity<List<MovieList>> getCaroselImages(){
-        return ResponseEntity.status(HttpStatus.OK).body(repository.findAll());
-    }
-
-    @PostMapping("/movie/carosel_image")
-    public ResponseEntity<String>  createCaroselImage(@RequestBody MovieList caroselImage){
-        repository.save(caroselImage);
-        return ResponseEntity.status(HttpStatus.CREATED).body(caroselImage.getMovieName() + " added!" );
-    }
 
 
 
