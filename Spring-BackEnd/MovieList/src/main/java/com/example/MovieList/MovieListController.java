@@ -37,7 +37,7 @@ public class MovieListController {
     public ResponseEntity<String>  createMovieListing(@RequestBody MovieList movieList){
         repository.save(movieList);
         return ResponseEntity.status(HttpStatus.CREATED).body(movieList.getMovieName() + " added!" );
-    }
+    }   
 
     @DeleteMapping("/movielist/{id}")
     @Transactional
